@@ -11,7 +11,7 @@ function Layouts({ children }) {
         <div className="h-full w-[20%] p-2">
           <SideMenu />
         </div>
-        <div className="p-2 overflow-y-scroll w-full">{children}</div>
+        <div className="p-2 overflow-y-scroll w-full ">{children}</div>
       </div>
     </div>
   );
