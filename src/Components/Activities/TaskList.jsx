@@ -65,7 +65,7 @@ function TaskList() {
   ];
   return (
     <div>
-      <table className="w-full">
+      <table className="w-full rounded-md">
         <thead className="bg-white rounded-md text-blue-500">
           <tr>
             <th className="border-solid border border-black py-2">Name</th>
