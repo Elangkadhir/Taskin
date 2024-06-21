@@ -53,13 +53,20 @@ function Projects() {
         <div className="flex justify-between mb-8 items-center">
           <div className="text-3xl">Projects</div>
           <div className="flex gap-2">
-            <div className="bg-blue-700 text-white p-2 cursor-pointer rounded-md">New Project</div>
-            <div className="bg-blue-700 text-white p-2 cursor-pointer rounded-md">Filter</div>
+            <div className="bg-blue-700 text-white p-2 cursor-pointer rounded-md">
+              New Project
+            </div>
+            <div className="bg-blue-700 text-white p-2 cursor-pointer rounded-md">
+              Filter
+            </div>
           </div>
         </div>
         <div class="grid grid-cols-3 gap-4">
           {data.map((item) => (
-            <div key={item.id} className="bg-white rounded-md p-2 ">
+            <div
+              key={item.id}
+              className="bg-white rounded-md p-2   hover:-translate-y-1 duration-200"
+            >
               <div>
                 <span className="text-black">Project Name : </span>
                 <span className="text-blue-500">{item.projectName}</span>
