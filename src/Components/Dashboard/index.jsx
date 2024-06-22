@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layouts from "../../Layouts";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -7,33 +7,95 @@ import "../Dashboard/calenderStyle.css";
 
 function Dashboard() {
   const localizer = momentLocalizer(moment);
+  const [btnColor, setBtnColor] = useState("month");
+  const [fb, setFb] = useState("TODAY");
 
   const CustomToolbar = ({ label, onNavigate, onView }) => {
+    const handleButtonChange = (view) => {
+      setBtnColor(view);
+      onView(view);
+    };
+
+    const handelFB = (view) => {
+      setFb(view);
+      onNavigate(view);
+    };
+
     return (
       <div className="rbc-toolbar mt-5 px-4 py-5">
         <span className="rbc-btn-group">
-          <button type="button" onClick={() => onNavigate("PREV")}>
+          <button
+            className={`custom-button ${
+              fb === "PREV" ? "custom-button-active" : "custom-button-inactive"
+            }`}
+            type="button"
+            onClick={() => handelFB("PREV")}
+          >
             Back
           </button>
-          <button type="button" onClick={() => onNavigate("TODAY")}>
+          <button
+            type="button"
+            className={`custom-button ${
+              fb === "TODAY" ? "custom-button-active" : "custom-button-inactive"
+            }`}
+            onClick={() => handelFB("TODAY")}
+          >
             Today
           </button>
-          <button type="button" onClick={() => onNavigate("NEXT")}>
+          <button
+            type="button"
+            className={`custom-button ${
+              fb === "NEXT" ? "custom-button-active" : "custom-button-inactive"
+            }`}
+            onClick={() => handelFB("NEXT")}
+          >
             Next
           </button>
         </span>
         <span className="rbc-toolbar-label">{label}</span>
         <span className="rbc-btn-group">
-          <button type="button" onClick={() => onView("month")}>
+          <button
+            className={`custom-button ${
+              btnColor === "month"
+                ? "custom-button-active"
+                : "custom-button-inactive"
+            }`}
+            type="button"
+            onClick={() => handleButtonChange("month")}
+          >
             Month
           </button>
-          <button type="button" onClick={() => onView("week")}>
+          <button
+            className={`custom-button ${
+              btnColor === "week"
+                ? "custom-button-active"
+                : "custom-button-inactive"
+            }`}
+            type="button"
+            onClick={() => handleButtonChange("week")}
+          >
             Week
           </button>
-          <button type="button" onClick={() => onView("day")}>
+          <button
+            className={`custom-button ${
+              btnColor === "day"
+                ? "custom-button-active"
+                : "custom-button-inactive"
+            }`}
+            type="button"
+            onClick={() => handleButtonChange("day")}
+          >
             Day
           </button>
-          <button type="button" onClick={() => onView("agenda")}>
+          <button
+            className={`custom-button ${
+              btnColor === "agenda"
+                ? "custom-button-active"
+                : "custom-button-inactive"
+            }`}
+            type="button"
+            onClick={() => handleButtonChange("agenda")}
+          >
             Agenda
           </button>
         </span>

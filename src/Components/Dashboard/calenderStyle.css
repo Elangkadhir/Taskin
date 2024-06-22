@@ -1,20 +1,32 @@
+.rbc-month-view .rbc-date-cell {
+  height: 300px;
+}
 
-  
-  .rbc-month-view .rbc-date-cell {
-    height: 300px;
-  }
-  
-  .rbc-month-row .rbc-date-cell {
-    text-align: start;
-    padding: 15px;
-    font-weight: bold;
-  }
-  
-  .rbc-month-view .rbc-header {
-    text-align: center;
-    font-weight: bold;
-    padding: 10px 0;
-  }
+.rbc-toolbar-label{
+  font-weight: bold;
+}
 
+.rbc-month-row .rbc-date-cell {
+  text-align: start;
+  padding: 15px;
+  font-weight: bold;
+}
 
-  
+.rbc-month-view .rbc-header {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.custom-button {
+  font-weight: bold;
+}
+
+.custom-button-active {
+  background-color: #3b82f6 !important;
+  color: white !important ;
+}
+
+.custom-button-inactive {
+  color: black !important;
+}
